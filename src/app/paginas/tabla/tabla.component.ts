@@ -37,9 +37,9 @@ export class TablaComponent implements OnInit {
   asigResultado:String=""
 
 
-  periodo: number=0;
-  departamento: number =0;
-  asignatura: number = 0;
+  periodo: String="";
+  departamento: String ="";
+  asignatura: String = "";
 
   ngOnInit() {
     this.getPeriodos()
@@ -48,7 +48,7 @@ export class TablaComponent implements OnInit {
 
   Filtrar(){
     console.log("asignatira:"+this.asignatura)
-    if(this.busqueda.valid && this.asignatura!=0){
+    if(this.busqueda.valid && this.asignatura!=""){
       this.buscar=true;
       this.getResultadosName(this.periodo,this.departamento,this.asignatura)
       this.getCursos()
@@ -58,7 +58,7 @@ export class TablaComponent implements OnInit {
     }
   }
 
-  getResultadosName(per:number, dep:number, asig:number){
+  getResultadosName(per:String, dep:String, asig:String){
     var perRes=this.listaPeriodos.filter(x => x.codigo === per);
     this.perResultado=perRes[0].nombre.toUpperCase()
     var depRes=this.listaDepartamentos.filter(x => x.codigo === dep);
@@ -71,9 +71,9 @@ export class TablaComponent implements OnInit {
     this.listaDepartamentos=[];
     this.service.getDepartamentos().subscribe(res => {
       this.listaDepartamentos.length=0
-      res.forEach((element: { codigo: any; nombre: any; }) => {
+      res.forEach((element: { id: any; nombre: any; }) => {
         this.listaDepartamentos.push({
-          codigo: element.codigo,
+          codigo: element.id,
           nombre: element.nombre
         })
       });
@@ -96,7 +96,7 @@ export class TablaComponent implements OnInit {
   }
 
   seleccion(){
-    if(this.departamento != 0 && this.periodo != 0 && this.departamento != undefined && this.periodo != undefined){
+    if(this.departamento != "" && this.periodo != "" && this.departamento != undefined && this.periodo != undefined){
       this.getAsignaturas();
     }else{
       this.listaAsignaturas=[]

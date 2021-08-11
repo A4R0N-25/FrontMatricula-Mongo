@@ -1,4 +1,4 @@
 export class Asignatura{
-    codigo!: number;
+    codigo!: String;
     nombre!: String;
 }

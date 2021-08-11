@@ -15,7 +15,7 @@ export class ServiciosService {
 
   constructor(private http: HttpClient) { }
 
-  Url = 'http://35.237.120.101:8080/v1/';
+  Url = 'http://localhost:8080/v1/';
 
 
   getDepartamentos(): Observable<any> {
@@ -27,11 +27,11 @@ export class ServiciosService {
     return this.http.get<Periodo>(this.Url + "periodo/");
   }
 
-  getAsignaturas(departamento: number, periodo: number): Observable<any> {
+  getAsignaturas(departamento: String, periodo: String): Observable<any> {
     return this.http.get<Asignatura>(this.Url + "asignatura/" + departamento + "/" + periodo);
   }
 
-  getCursos(asignatura: number, periodo: number): Observable<any> {
+  getCursos(asignatura: String, periodo: String): Observable<any> {
     return this.http.get(this.Url + "curso/" + asignatura + "/" + periodo);
   }
 
@@ -47,8 +47,8 @@ export class ServiciosService {
     return this.http.get(this.Url + "matricula/?correo=" + correo + "&periodo=" + periodo);
   }
 
-  borrarDetalleMatricula(codigo: number) {
-    return this.http.delete(this.Url + "matricula/" + codigo);
+  borrarDetalleMatricula(matricula:String,nrc: number) {
+    return this.http.delete(this.Url + "matricula/" + matricula+"/"+nrc);
   }
 
   obtenerAllCarreras(): Observable<any> {

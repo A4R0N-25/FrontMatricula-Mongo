@@ -1,5 +1,5 @@
 export class MatriculaDetalle{
-    codigo!: number;
+    codigo!: String;
     nrc!:number;
     materia!: String;
     creditos!: number;

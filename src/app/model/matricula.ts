@@ -1,7 +1,7 @@
 import { MatriculaDetalle } from "./matriculaDetalle";
 
 export class Matricula{
-    codigo!: number;
+    codigo!: string;
     fecha!: Date;
     periodo!:String;
     creditosTotales!: number;

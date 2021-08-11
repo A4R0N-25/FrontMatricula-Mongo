@@ -1,5 +1,5 @@
 export class MatriculaRQ{
-    matricula!: number | null | undefined;
+    matricula!: String | null | undefined;
     correo!: String | null;
     periodo!:number;
     cursos!:number[];

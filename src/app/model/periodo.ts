@@ -1,5 +1,5 @@
 export class Periodo{
-    codigo!: number;
+    codigo!: String;
     nombre!: String;
     estado!: String;
 }

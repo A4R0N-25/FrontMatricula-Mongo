@@ -198,7 +198,7 @@ export class MatriculaComponent implements OnInit {
       cancelButtonText: "Cancelar"
     }).then((result) => {
       if (result.isConfirmed) {
-        this.service.borrarDetalleMatricula(detalle.codigo).subscribe(res => {
+        this.service.borrarDetalleMatricula(this.matriculaInfo?.codigo,detalle.nrc).subscribe(res => {
           this.buscarMatricula()
           Swal.fire(
             'Eliminado!',

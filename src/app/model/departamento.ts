@@ -1,4 +1,4 @@
 export class Departmanento{
-    codigo!: number;
+    codigo!: String;
     nombre!: String;
 }
