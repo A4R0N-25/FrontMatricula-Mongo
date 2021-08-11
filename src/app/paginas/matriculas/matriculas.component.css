@@ -1,0 +1,23 @@
+.info{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.detalle-rep{
+    background-color: rgb(243, 180, 180);
+    color: rgb(160, 44, 44);
+    padding: 5px;
+}
+
+.detalle-apr{
+    background-color: rgb(164, 252, 161);
+    color: rgb(44, 160, 50);
+    padding: 5px;
+}
+
+.detalle-cur{
+    background-color: rgb(172, 179, 170);
+    color: rgb(43, 41, 41);
+    padding: 5px;
+}

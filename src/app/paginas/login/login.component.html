@@ -1,0 +1,30 @@
+<body class="text-center">
+  <form class="form-signin" [formGroup]="login" (ngSubmit)="Verificar()">
+    <img class="mb-4" src="https://www.espe.edu.ec/wp-content/uploads/2018/11/espe.png" alt="" width="250"
+      height="72">
+    <h1 class="h3 mb-3 font-weight-normal"><b>Inicio de Sesión</b></h1>
+    <label>Usuario</label>
+    <input type="correo" class="form-control" formControlName="correo" placeholder="deyandun2">
+    <div *ngIf="login.controls['correo'].invalid && (login.controls['correo'].dirty || login.controls['correo'].touched)" class="alert alert-danger">
+
+      <div *ngIf="login.controls['correo'].errors?.required">
+       Se requiere un Usuario
+      </div>
+      <div *ngIf="login.controls['correo'].errors?.email">
+        Correo Invalido
+      </div>
+    </div>
+    <br>
+    <label>Contraseña</label>
+    <input type="password" class="form-control" formControlName="password" placeholder="contraseña">
+    <div *ngIf="login.controls['password'].invalid && (login.controls['password'].dirty || login.controls['password'].touched)" class="alert alert-danger">
+
+      <div *ngIf="login.controls['password'].errors?.required">
+        Se requiere la constraseña
+      </div>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+    <br>
+    <a class="btn btn-outline-success" type="button" (click)="registrar()">Nuevo Estudiante</a>
+  </form>
+</body>
